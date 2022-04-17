@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Parking Manage System</title>
+
+    <link rel="stylesheet" href="../static/css/public.css"/>
+    <link rel="stylesheet" href="{% static '../static/css/public.css'%}">
+
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="{% static '../static/css/style.css'%}">
+</head>
+<body>
+<!--head-->
+<header class="publicHeader">
+    <h1>Parking charging manage system</h1>
+</header>
+<!--Time-->
+<section class="publicTime">
+    <span id="time"></span>
+    <a href="#">Please using chorme to make every operation could work properly</a>
+</section>
+<!--body-->
+<section class="publicMian ">
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>Operation<span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="/Listall/">List all car</a></li>
+                <li><a href="/CarRegister/">Register a car</a></li>
+                <li><a href="/Search/">Search a car</a></li>
+                <li><a href="/Report/">Report a car</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>Now avaliable operation:</strong>
+            <span>Search result</span>
+        </div>
+
+        <div style="overflow: scroll;height: 560px;width: 1255px;">
+            <table class="providerTable" cellpadding="0" cellspacing="0"
+                   style="position: relative;top: 8px;width: 1237px;left: 0px;">
+                <tr class="firstTr">
+                    <th>License</th>
+                    <th>Time</th>
+                     <th>Counter</th>
+                    <th>Zoon</th>
+                    <th>Charge</th>
+                </tr>
+                <tr>
+
+{#                    {% for car in car_result %}#}
+                    <td>{{ car_result.License }}</td>
+                    <td>{{ car_result.Time}}</td>
+                    <td>{{ car_result.Counter }}</td>
+                    <td>{{ car_result.Position.positionid }}</td>
+                    <td>{{ car_result.Charge }} RMB</td>
+{#                    {% endfor %}#}
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+</footer>
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/js.js"></script>
+<script src="../../static/js/time.js"></script>
+</body>
+</html>

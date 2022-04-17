@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Parking Manage System</title>
+
+    <link rel="stylesheet" href="../static/css/public.css"/>
+    <link rel="stylesheet" href="{% static '../static/css/public.css'%}">
+
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="{% static '../static/css/style.css'%}">
+</head>
+<body>
+<!--head-->
+<header class="publicHeader">
+    <h1>Parking charging manage system</h1>
+</header>
+<!--Time-->
+<section class="publicTime">
+    <span id="time"></span>
+    <a href="#">Please using chorme to make every operation could work properly</a>
+</section>
+<!--body-->
+<section class="publicMian ">
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>Operation<span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="/Listall/">List all car</a></li>
+                <li><a href="/CarRegister/">Register a car</a></li>
+                <li><a href="/Search/">Search a car</a></li>
+                <li><a href="/Report/">Report a car</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>Now avaliable operation:</strong>
+            <span>Register a car</span>
+        </div>
+
+        <div style="height: 560px;width: 1255px;">
+            <form method = 'post' enctype="multipart/form-data" action="/recognition/">
+                {% csrf_token %}
+                <input type="file" name="pic"><br/>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+</footer>
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/js.js"></script>
+<script src="../../static/js/time.js"></script>
+</body>
+</html>
